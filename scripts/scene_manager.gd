@@ -2,10 +2,10 @@ class_name SceneManager
 extends Node
 
 const MAIN_MENU = preload("uid://bcs5tv47s3h6w")
-#const GAME : PackedScene = preload("uid://bkgnymwh1s6iy")
+const GAME = preload("uid://df2mac0t3xwt6")
 #const UPGRADE_SCREEN : PackedScene = preload("uid://de8jh1llp673f")
 
-const _SCENE_PREFABS : Array[PackedScene] = [ MAIN_MENU ]
+const _SCENE_PREFABS : Array[PackedScene] = [ MAIN_MENU, GAME ]
 
 enum SceneId {
     MAIN_MENU,
