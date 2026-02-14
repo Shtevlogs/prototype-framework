@@ -1,8 +1,6 @@
 class_name Player
 extends Polygon2D
 
-const PLAYER_SPEED := 35.0
-
 func _process(delta: float) -> void:
     var dir := Vector2.ZERO
     
@@ -16,7 +14,7 @@ func _process(delta: float) -> void:
         dir.y += 1
 
     if Input.is_action_just_pressed("space"):
-        GameStateManager.CURRENT.player_state.xp += 1
+        GameStateManager.CURRENT.player_state.xp += GameConfig.XP_PER_SPAcE
         print(str(GameStateManager.CURRENT.player_state.xp))
 
-    position += dir * delta * PLAYER_SPEED
+    position += dir * delta * GameConfig.PLAYER_MOVE_SPEED
