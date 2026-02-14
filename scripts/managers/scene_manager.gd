@@ -22,5 +22,11 @@ func _ready() -> void:
 static func load_scene(scene: SceneId) -> void:
     if _I.scene_root.get_child_count() != 0:
         _I.scene_root.get_child(0).queue_free()
-    var new_scene := _SCENE_PREFABS[scene].instantiate() as Node
+        
+    var new_scene : Node = null
+    if scene == SceneId.GAME:
+        new_scene = SaveGameManager.load()
+    else:
+        new_scene = _SCENE_PREFABS[scene].instantiate() as Node
+        
     _I.scene_root.add_child(new_scene)

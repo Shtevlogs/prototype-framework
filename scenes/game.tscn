@@ -1,5 +1,17 @@
-[gd_scene format=3 uid="uid://df2mac0t3xwt6"]
+[gd_scene load_steps=4 format=3 uid="uid://df2mac0t3xwt6"]
+
+[ext_resource type="Script" uid="uid://d3spm0lepdbwn" path="res://scripts/managers/game_state_manager.gd" id="1_uwrxv"]
+[ext_resource type="Script" uid="uid://cn16fbg8b8nuc" path="res://scripts/scenes/game.gd" id="1_yqjtg"]
+[ext_resource type="Script" uid="uid://bqba1g51070ds" path="res://scripts/entities/player.gd" id="3_lnu2h"]
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_yqjtg")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="GameStateManager" type="Node" parent="."]
+script = ExtResource("1_uwrxv")
+
+[node name="Player" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(5, 5, -5, 5, -5, -5, 5, -5)
+script = ExtResource("3_lnu2h")
