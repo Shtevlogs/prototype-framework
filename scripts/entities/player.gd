@@ -14,7 +14,7 @@ func _process(delta: float) -> void:
         dir.y += 1
 
     if Input.is_action_just_pressed("space"):
-        GameStateManager.CURRENT.player_state.xp += GameConfig.XP_PER_SPAcE
+        GameStateManager.CURRENT.player_state.xp += GameConfig.XP_PER_SPACE
         print(str(GameStateManager.CURRENT.player_state.xp))
 
     position += dir * delta * GameConfig.PLAYER_MOVE_SPEED
